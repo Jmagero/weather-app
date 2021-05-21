@@ -4,11 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="dist/main.js"></script>
+  <title>Weather App</title>
+    <script defer src="main.js"></script>
 </head>
 <body>
+    <section class="container">
+        <div class="weather-container">
+            <h1 class="title" id="city">Kampala, Uganda</h1>
+            <h4 id="time">date & time</h4>
+            <h3 id="temperature">44</h3>
+            <i class="fal fa-acorn"></i>
+            <p id="clouds">Mostly clear</p>      
+        </div>
+        <div class="search-container">
+            <h1 class="title">Current Weather</h1>
+            <h4 id="search">Search Location</h4>
+            <i class="fas fa-thumbtack"></i>
+            <div>
+                <input type="text" placeholder="search">
+            </div>
+            <div>
+                <label class="switch" for="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div> 
+        </div>
+    </section>
     
 </body>
 </html>
