@@ -22,12 +22,12 @@ async function fetchData(country){
 	});
 }
 
-async function loadData(name){
-    const response  = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=1045a35b8ebf5f8cfdcd94f356e5da65`, {mode: "cors"});
-    const data = await response.json();
-    return data
-};
-console.log(loadData("Uganda"));
+function showWeather(d){
+    var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+	var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+	
+	document.getElementById('temp').innerHTML = celcius;
+}
 
 
 
