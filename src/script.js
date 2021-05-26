@@ -1,11 +1,10 @@
-import '@fortawesome/fontawesome-free/js/all.js';
-import { fetchData } from './fetch';
-
+import '@fortawesome/fontawesome-free/js/all';
+import fetchData from './fetch';
 
 const form = document.getElementById('form');
 
-form.addEventListener('submit',function(e){
-    e.preventDefault();
-    let country = document.getElementById("location").value;
-    fetchData(country);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const country = document.getElementById('location').value;
+  fetchData(country);
 });
