@@ -19,6 +19,28 @@ eval("/*!\n * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
 
 /***/ }),
 
+/***/ "./src/display.js":
+/*!************************!*\
+  !*** ./src/display.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"showWeather\": () => (/* binding */ showWeather)\n/* harmony export */ });\n    const  showWeather = d => {\r\n        let offset = -8;\r\n        let  celcius = Math.round(parseFloat(d.main.temp)-273.15);\r\n        let fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); \r\n        let  name = d.sys.country;\r\n        let  city = d.name;\r\n        let visibility = Math.round(d.visibility/1000);\r\n        let wind = d.wind.speed;\r\n        let humidity = d.main.humidity;\r\n        let description = d.weather[0].description;\r\n\r\n\tdocument.getElementById('temp').innerHTML = 'temp: '+ celcius + '&deg';\r\n    document.getElementById('city').innerHTML = ' '+ city + ',' + name;\r\n    document.getElementById('visibility').innerText = \"Visibility:\" + visibility+'km';\r\n    document.getElementById('wind').innerText = \"Wind Speed: \" + wind + 'm/s';\r\n    document.getElementById('humidity').innerText = 'Humidity: ' + humidity + '%';\r\n    document.getElementById('description').innerText = description;\r\n\r\n    if( description.indexOf('rain') > 0 ) {\r\n        document.body.className = 'rainy';\r\n    } else if( description.indexOf('cloud') > 0 ) {\r\n        document.body.className = 'cloudy';\r\n    } else if( description.indexOf('sunny') > 0 ) {\r\n        document.body.className = 'sunny';\r\n    }\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/display.js?");
+
+/***/ }),
+
+/***/ "./src/fetch.js":
+/*!**********************!*\
+  !*** ./src/fetch.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"fetchData\": () => (/* binding */ fetchData)\n/* harmony export */ });\n/* harmony import */ var _display__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./display */ \"./src/display.js\");\n/* harmony import */ var _utility__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utility */ \"./src/utility.js\");\n\r\n\r\n\r\nasync function fetchData(country) {\r\n\r\n    let url = `http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${_utility__WEBPACK_IMPORTED_MODULE_1__.api}`\r\n    let res = await fetch(url, {mode: \"cors\"}) \r\n    let response = await res.json()\r\n    .then(data => {\r\n        ;(0,_display__WEBPACK_IMPORTED_MODULE_0__.showWeather)(data)\r\n    })\r\n    .catch(function(e) {\r\n\t\te\r\n\t});\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/fetch.js?");
+
+/***/ }),
+
 /***/ "./src/script.js":
 /*!***********************!*\
   !*** ./src/script.js ***!
@@ -26,7 +48,7 @@ eval("/*!\n * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ \"./node_modules/@fortawesome/fontawesome-free/js/all.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utility__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utility */ \"./src/utility.js\");\n\r\n\r\n\r\n\r\nconst form = document.getElementById('form');\r\n\r\nform.addEventListener('submit',function(e){\r\n    e.preventDefault();\r\n    let country = document.getElementById(\"location\").value;\r\n    fetchData(country);\r\n});\r\n\r\nasync function fetchData(country){\r\n\r\n    let url = `http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${_utility__WEBPACK_IMPORTED_MODULE_1__.api}`\r\n    let res = await fetch(url, {mode: \"cors\"}) \r\n    let response = await res.json()\r\n    .then(data => {\r\n        showWeather(data)\r\n    })\r\n    .catch(function(e) {\r\n\t\te\r\n\t});\r\n}\r\n\r\nfunction showWeather(d){\r\n    var celcius = Math.round(parseFloat(d.main.temp)-273.15);\r\n\tvar fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); \r\n    var name = d.sys.country;\r\n    var city = d.name;\r\n    var visibility = Math.round(d.visibility/1000);\r\n    var wind = d.wind.speed;\r\n    var humidity = d.main.humidity;\r\n    var description = d.weather[0].main;\r\n\t\r\n\tdocument.getElementById('temp').innerHTML = 'temp: '+ celcius + '&deg';\r\n    document.getElementById('city').innerHTML = ' '+ city + ',' + name;\r\n    document.getElementById('visibility').innerText = \"Visibility:\" + visibility+'km';\r\n    document.getElementById('wind').innerText = \"Wind Speed: \" + wind + 'm/s';\r\n    document.getElementById('humidity').innerText = 'Humidity: ' + humidity + '%';\r\n    document.getElementById('description').innerText = description;\r\n}\r\n\n\n//# sourceURL=webpack://weather-app/./src/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ \"./node_modules/@fortawesome/fontawesome-free/js/all.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetch */ \"./src/fetch.js\");\n\r\n\r\n\r\n\r\nconst form = document.getElementById('form');\r\n\r\nform.addEventListener('submit',function(e){\r\n    e.preventDefault();\r\n    let country = document.getElementById(\"location\").value;\r\n    (0,_fetch__WEBPACK_IMPORTED_MODULE_1__.fetchData)(country);\r\n});\n\n//# sourceURL=webpack://weather-app/./src/script.js?");
 
 /***/ }),
 
