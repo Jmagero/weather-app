@@ -1,18 +1,18 @@
-$primary-color:#4169E1;
-$secondary-color: #F0FFFF;
+$primary-color:#4169e1;
+$secondary-color: #f0ffff;
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    color: #F0FFFF;
-    max-width: 1000px;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-    background-image: url(/dist/images/cirrus-clouds-filaments-weather.jpg);
+  color: #f0ffff;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(/dist/images/cirrus-clouds-filaments-weather.jpg);
 }
 
 body.sunny {
@@ -22,84 +22,94 @@ body.sunny {
 body.cloudy {
   background-image: url('/dist/images/cloudy.jpg');
 }
+
 body.rainy {
   background-image: url('/dist/images/heavy_rain_jpg-6.jpg');
 }
+
 .container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 100px;
-    .weather-container{
-        text-align: center;
-        .title {
-            font-size: 40px;
-            padding-bottom: 20px;
-        }
-        #time {
-            font-size: 20px;
-            padding-bottom: 20px;
-        }
-        #temperature {
-            font-size: 60px;
-            font-weight: bold;
-            padding-bottom: 20px;
-        }
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+
+  .weather-container {
+    text-align: center;
+
+    .title {
+      font-size: 40px;
+      padding-bottom: 20px;
     }
 
-    .search-container{
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-          }
-          .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            -webkit-transition: .4s;
-            transition: .4s;
-          }
-          .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            -webkit-transition: .4s;
-            transition: .4s;
-          }
-          
-          input:checked + .slider {
-            background-color: #2196F3;
-          }
-          
-          input:focus + .slider {
-            box-shadow: 0 0 1px #2196F3;
-          }
-          
-          input:checked + .slider:before {
-            -webkit-transform: translateX(26px);
-            -ms-transform: translateX(26px);
-            transform: translateX(26px);
-          }
-          .slider.round {
-            border-radius: 34px;
-          }
-          
-          .slider.round:before {
-            border-radius: 50%;
-          }
+    #time {
+      font-size: 20px;
+      padding-bottom: 20px;
     }
+
+    #temperature {
+      font-size: 60px;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+  }
+
+  .search-container {
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196f3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196f3;
+    }
+
+    input:checked + .slider::before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round::before {
+      border-radius: 50%;
+    }
+  }
 }
