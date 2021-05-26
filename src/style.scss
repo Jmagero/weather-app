@@ -8,13 +8,23 @@ $secondary-color: #F0FFFF;
 }
 
 body {
-    background-color: $primary-color;
     color: #F0FFFF;
     max-width: 1000px;
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/dist/images/cirrus-clouds-filaments-weather.jpg);
 }
 
+body.sunny {
+  background-image: url('/dist/images/blue-sky-1.jpg');
+}
+
+body.cloudy {
+  background-image: url('/dist/images/cloudy.jpg');
+}
+body.rainy {
+  background-image: url('/dist/images/heavy_rain_jpg-6.jpg');
+}
 .container {
     display: flex;
     justify-content: space-between;
