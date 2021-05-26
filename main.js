@@ -26,7 +26,18 @@ eval("/*!\n * Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ \"./node_modules/@fortawesome/fontawesome-free/js/all.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nasync function loadData(name){\r\n    const response  = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=1045a35b8ebf5f8cfdcd94f356e5da65`, {mode: \"cors\"});\r\n    const data = await response.json();\r\n    return data\r\n};\r\nconsole.log(loadData(\"Uganda\"));\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.js */ \"./node_modules/@fortawesome/fontawesome-free/js/all.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utility__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utility */ \"./src/utility.js\");\n\r\n\r\n\r\n\r\nconst form = document.getElementById('form');\r\n\r\nform.addEventListener('submit',function(e){\r\n    e.preventDefault();\r\n    let country = document.getElementById(\"location\").value;\r\n    fetchData(country);\r\n});\r\n\r\nasync function fetchData(country){\r\n\r\n    let url = `http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${_utility__WEBPACK_IMPORTED_MODULE_1__.api}`\r\n    let res = await fetch(url, {mode: \"cors\"}) \r\n    let response = await res.json()\r\n    .then(data => {\r\n        showWeather(data)\r\n    })\r\n    .catch(function() {\r\n\t\te\r\n\t});\r\n}\r\n\r\nfunction showWeather(d){\r\n    var celcius = Math.round(parseFloat(d.main.temp)-273.15);\r\n\tvar fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); \r\n\t\r\n\tdocument.getElementById('temp').innerHTML = celcius;\r\n}\r\n\n\n//# sourceURL=webpack://weather-app/./src/script.js?");
+
+/***/ }),
+
+/***/ "./src/utility.js":
+/*!************************!*\
+  !*** ./src/utility.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"api\": () => (/* binding */ api)\n/* harmony export */ });\nconst api = '4ea782e9c99b65d202507144f946ba05';\r\n\r\n\n\n//# sourceURL=webpack://weather-app/./src/utility.js?");
 
 /***/ })
 
