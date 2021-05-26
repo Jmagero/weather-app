@@ -13,7 +13,7 @@
         <div class="weather-container">
             <h1 class="title" id="city">Kampala, Uganda</h1>
             <h4 id="time">date & time</h4>
-            <h3 id="temperature">44</h3>
+            <h3 id="temp">44</h3>
             <i class="fal fa-acorn"></i>
             <p id="clouds">Mostly clear</p>      
         </div>
@@ -21,9 +21,10 @@
             <h1 class="title">Current Weather</h1>
             <h4 id="search">Search Location</h4>
             <i class="fas fa-thumbtack"></i>
-            <div>
-                <input type="text" placeholder="search">
-            </div>
+            <form action="" id="form">
+                <input type="text" placeholder="search" id="location">
+                <button type="submit" id="submitBtn">submit</button>
+            </form>
             <div>
                 <label class="switch" for="switch">
                     <input type="checkbox">
