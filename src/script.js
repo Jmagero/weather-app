@@ -9,6 +9,7 @@ form.addEventListener('submit',function(e){
     let country = document.getElementById("location").value;
     fetchData(country);
 });
+
 async function fetchData(country){
 
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=${api}`
@@ -28,12 +29,3 @@ function showWeather(d){
 	
 	document.getElementById('temp').innerHTML = celcius;
 }
-
-
-
-
-
-
-
-
-
