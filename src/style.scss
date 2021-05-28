@@ -62,13 +62,6 @@ body.rainy {
     }
   }
 
-
-
-  // display: flex;
-  // flex-direction: column;
-  // align-content: center;
-  // // justify-content: center
-
   .weather-container {
     text-align: center;
 
@@ -77,17 +70,15 @@ body.rainy {
       padding-bottom: 20px;
     }
 
-    #time {
-      font-size: 20px;
-      padding-bottom: 20px;
-    }
-
-    #temperature {
-      font-size: 60px;
+    #temp {
+      font-size: 30px;
       font-weight: bold;
       padding-bottom: 20px;
     }
-  }
 
+    p {
+      margin-bottom: 10px;
+    }
+  }
  
 }

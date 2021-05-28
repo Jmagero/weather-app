@@ -16,7 +16,7 @@ const showWeather = (d) => {
   document.getElementById('visibility').innerText = `Visibility:${visibility}km`;
   document.getElementById('wind').innerText = `Wind Speed: ${wind}m/s`;
   document.getElementById('humidity').innerText = `Humidity: ${humidity}%`;
-  document.getElementById('description').innerText = description;
+  document.getElementById('description').innerText = `Description: ${description}`;
 
   if (description.indexOf('rain') > 0) {
     document.body.className = 'rainy';

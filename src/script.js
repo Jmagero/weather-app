@@ -12,6 +12,7 @@ form.addEventListener('submit', (e) => {
   fetchData(country);
 });
 
+
 checkbox.addEventListener('change', (event) => {
   if (event.currentTarget.checked) {
     currenttemp.textContent = `temp: ${fahrenheit}°F`;
