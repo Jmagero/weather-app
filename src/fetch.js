@@ -1,4 +1,4 @@
-import showWeather from './display';
+import {showWeather} from './display';
 import api from './utility';
 
 function fetchData(country) {
@@ -6,7 +6,7 @@ function fetchData(country) {
   fetch(url, { mode: 'cors' })
     .then((response) => response.json())
     .then((data) => {
-      showWeather(data);
+      showWeather(data)
     });
 }
 
