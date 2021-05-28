@@ -5,10 +5,12 @@ import {showWeather, fahrenheit, celcius} from './display';
 const form = document.getElementById('form');
 const checkbox = document.getElementById('checkbox');
 let currenttemp = document.getElementById('temp');
+const checkboxDiv = document.querySelector('.checkboxDiv')
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const country = document.getElementById('location').value;
+  checkboxDiv.classList.add('display');
   fetchData(country);
 });
 
@@ -20,3 +22,4 @@ checkbox.addEventListener('change', (event) => {
     currenttemp.textContent =  `temp: ${celcius}°C`;
   }
 });
+
