@@ -1,11 +1,11 @@
 import '@fortawesome/fontawesome-free/js/all';
 import fetchData from './fetch';
-import {showWeather, fahrenheit, celcius} from './display';
+import { fahrenheit, celcius } from './display';
 
 const form = document.getElementById('form');
 const checkbox = document.getElementById('checkbox');
-let currenttemp = document.getElementById('temp');
-const checkboxDiv = document.querySelector('.checkboxDiv')
+const currenttemp = document.getElementById('temp');
+const checkboxDiv = document.querySelector('.checkboxDiv');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -14,12 +14,10 @@ form.addEventListener('submit', (e) => {
   fetchData(country);
 });
 
-
 checkbox.addEventListener('change', (event) => {
   if (event.currentTarget.checked) {
     currenttemp.textContent = `temp: ${fahrenheit}°F`;
   } else {
-    currenttemp.textContent =  `temp: ${celcius}°C`;
+    currenttemp.textContent = `temp: ${celcius}°C`;
   }
 });
-
