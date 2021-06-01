@@ -1,4 +1,3 @@
-
 const degrees = {};
 
 const showWeather = (d) => {
