@@ -1,0 +1,94 @@
+$primary-color:#4169e1;
+$secondary-color: #f0ffff;
+$primary-family: arial, helvetica, sans-serif;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #f0ffff;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url(/dist/images/cirrus-clouds-filaments-weather.jpg);
+}
+
+body.sunny {
+  background-image: url('/dist/images/blue-sky-1.jpg');
+}
+
+body.cloudy {
+  background-image: url('/dist/images/cloudy.jpg');
+}
+
+body.rainy {
+  background-image: url('/dist/images/heavy_rain_jpg-6.jpg');
+}
+
+.container {
+  .title {
+    font-size: 50px;
+    text-align: center;
+    font-weight: bolder;
+    font-family: $primary-family;
+    margin-top: 20px;
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    .form {
+      display: flex;
+    }
+
+    #location {
+      border-radius: 10px;
+      width: 100%;
+      border: none;
+      padding: 3px 10px;
+    }
+
+    #submitBtn {
+      border: none;
+      border-radius: 10px;
+      padding: 3px 5px;
+      margin-left: 2px;
+    }
+  }
+
+  .weather-container {
+    text-align: center;
+
+    .weather-container.no-display {
+      display: none;
+    }
+
+    .title {
+      font-size: 40px;
+      padding-bottom: 20px;
+    }
+
+    #temp {
+      font-size: 30px;
+      font-weight: bold;
+      padding-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .hide .checkboxDiv {
+      display: none;
+    }
+
+    .display {
+      display: block;
+    }
+  }
+}

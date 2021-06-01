@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+  <title>My Weather App</title>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <section class="container">
+        <h1 class="title">weather-app</h1>
+        <div class="search-container">
+            <form action="" id="form" class="form">
+                <input type="text" placeholder="Enter city" id="location">
+                <button type="submit" id="submitBtn"><i class="fas fa-search"></i></i> </button>
+            </form>
+            <span id="error-text"></span>
+        </div>
+        <div class="weather-container">
+            <h1 class="title" id="city"></h1>
+            <h3 id="temp"></h3>
+            <p id="description"></p>
+            <p id="humidity"></p> 
+            <p id="visibility"></p> 
+            <p id="wind"></p> 
+            <div class="checkboxDiv">
+                <input type="checkbox" id="checkbox" value="">
+                <label for="">change to F</label>
+            </div>
+            <div class="error-container hide">
+                <p id="error-text"><p>
+            </div>      
+        </div>
+        </section>
+    
+</body>
+</html>
