@@ -1,23 +1,28 @@
 import '@fortawesome/fontawesome-free/js/all';
 import fetchData from './fetch';
-import { fahrenheit, celcius } from './display';
+import { degrees } from './display';
 
 const form = document.getElementById('form');
 const checkbox = document.getElementById('checkbox');
 const currenttemp = document.getElementById('temp');
 const checkboxDiv = document.querySelector('.checkboxDiv');
+const errorText = document.getElementById('error-text');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const country = document.getElementById('location').value;
+  const city = document.getElementById('location').value;
+  if (city === '' || city === null) {
+    errorText.innerText = " city can't be blank, try again!";
+    return;
+  }
+  fetchData(city);
   checkboxDiv.classList.add('display');
-  fetchData(country);
 });
 
 checkbox.addEventListener('change', (event) => {
   if (event.currentTarget.checked) {
-    currenttemp.textContent = `temp: ${fahrenheit}°F`;
+    currenttemp.textContent = `temp: ${degrees.fahrenheit}°F`;
   } else {
-    currenttemp.textContent = `temp: ${celcius}°C`;
+    currenttemp.textContent = `temp: ${degrees.celcius}°C`;
   }
 });
